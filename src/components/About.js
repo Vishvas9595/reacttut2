@@ -1,76 +1,61 @@
-import React, { useState } from 'react'
+ import React  from 'react'
 
-export default function About() {
+export default function About(props) {
 
-    const[mystyle, setmyStyle]=useState({
-        color:'black',
-        backgroundColor:'white'
-    })
-    const[btntext, setbtntext]=useState("Enable Dark Mode")
-    
-    const toggleStyle=()=>{
-        if(mystyle.color==='black'){
-            setmyStyle({
-                color:'white',
-                backgroundColor:'black'
-
-            })
-            setbtntext("Enable light Mode")
-        }
-        else{
-            setmyStyle({
-                color:'black',
-                backgroundColor:'white'
-
-            })
-            setbtntext("Enable dark Mode")
-        }
+    // const[mystyle, setmyStyle]=useState({
+    //     color:'black',
+    //     backgroundColor:'white'
+    // })
+  
+    let mystyle={
+        color: props.mode==='dark'?'white':'#195e7f',
+        backgroundColor: props.mode==='dark'?'#195e7f':'white',
     }
- 
+
   return (
-    <div className="container" style={mystyle} >
+    <div className="container" style={{  color: props.mode==='dark'?'white':'#195e7f',}} >
         <h2>About Us</h2>
                 <div className="accordion" id="accordionExample" style={mystyle}>
                 <div className="accordion-item">
                     <h2 className="accordion-header">
                     <button className="accordion-button" style={mystyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Accordion Item #1
+                      <strong>Analyze your text</strong>  
                     </button>
                     </h2>
                 <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                 <div className="accordion-body" style={mystyle}>
-                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    UniqueCodes gives you a way to analyze your text quicly and efficently. Be it word count char count and etc.
                 </div>
                 </div>
                 </div>
                 <div className="accordion-item">
                     <h2 className="accordion-header">
-                        <button className="accordion-button collapsed" style={mystyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Accordion Item #2
+                    <button className="accordion-button collapsed" style={mystyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <strong> free to use</strong>
                         </button>
                     </h2>
                 <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div className="accordion-body" style={mystyle}>
-                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    UniqueCodes is a free charctercounter tool that provides instant character count & word count statistics for a given text. UniqueCodes report the number of word and characters. Thus it is suitable for writing text with word/ character limit.
                 </div>
                 </div>
                 </div>
                 <div className="accordion-item">
                     <h2 className="accordion-header">
                     <button className="accordion-button collapsed" style={mystyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                         Accordion Item #3
+                      <strong>Browser compatible</strong> 
                         </button>
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div className="accordion-body" style={mystyle}>
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                      This word counter softwer work in any web browser such a chrome , firefox, Internet explorer, Safari, Opera, it suit to count character in facebook, blog, books, exel document, pdf document, essay, etc. 
                     </div>
                 </div>
             </div>
         </div> 
-        <div className="container">
+        {/* <div className="container">
             <button onClick={toggleStyle} type="button" className="btn btn-primary my-2">{btntext}</button>
-        </div>
+        </div> */}
     </div>
   )
 }
