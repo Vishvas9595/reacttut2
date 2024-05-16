@@ -41,12 +41,12 @@ export default function Navbar(props) {
               </Link>
             </li>
             {/* Uncomment this block if you want to add the About link */}
-             <li className="nav-item">
+            <li className="nav-item">
               <Link className="nav-link" to="/about">
                 About
               </Link>
             </li> 
-          </ul>
+          </ul> 
           {/* <div className="d-flex">
             <div className="bg-primary rounded mx-2" onClick={()=>props.toggleMode('primary')}  style={{height:"30px", width:"30px", cursor: "pointer"}}/>
             <div className="bg-danger rounded mx-2" onClick={()=>props.toggleMode('danger')}  style={{height:"30px", width:"30px", cursor: "pointer"}}/>
